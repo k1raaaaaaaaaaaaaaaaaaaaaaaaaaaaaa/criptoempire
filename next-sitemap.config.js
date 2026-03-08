@@ -16,15 +16,22 @@ module.exports = {
     ],
   },
   transform: async (config, path) => {
-    // Higher priority for homepage and main pages
     let priority = config.priority;
     let changefreq = config.changefreq;
 
     if (path === "/") {
       priority = 1.0;
       changefreq = "daily";
-    } else if (path === "/comparar" || path === "/promociones") {
+    } else if (path === "/comparar" || path === "/promociones" || path === "/exchanges") {
       priority = 0.9;
+      changefreq = "weekly";
+    } else if (path.match(/^\/exchanges\/[^/]+\/[^/]+$/)) {
+      // /exchanges/[slug]/[country] — programmatic SEO pages
+      priority = 0.8;
+      changefreq = "weekly";
+    } else if (path.match(/^\/comparar\/[^/]+-vs-[^/]+$/)) {
+      // /comparar/[pair] — vs comparison pages
+      priority = 0.8;
       changefreq = "weekly";
     } else if (path.startsWith("/exchanges/") && path !== "/exchanges") {
       priority = 0.8;
