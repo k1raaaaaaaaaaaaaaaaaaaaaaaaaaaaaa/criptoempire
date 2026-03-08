@@ -29,7 +29,7 @@ const promos: Promo[] = [
     exchangeName: "Bybit",
     logo: "/logos/bybit.svg",
     affiliateUrl: exchanges[0].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $30,000 USDT",
     bonusType: "Registro + Depósito",
     description:
@@ -42,7 +42,7 @@ const promos: Promo[] = [
     exchangeName: "MEXC",
     logo: "/logos/mexc.svg",
     affiliateUrl: exchanges[1].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $1,000 USDT",
     bonusType: "Registro + Trading",
     description:
@@ -54,7 +54,7 @@ const promos: Promo[] = [
     exchangeName: "OKX",
     logo: "/logos/okx.svg",
     affiliateUrl: exchanges[3].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $10,000 USDT",
     bonusType: "Registro + Depósito",
     description:
@@ -66,7 +66,7 @@ const promos: Promo[] = [
     exchangeName: "Binance",
     logo: "/logos/binance.svg",
     affiliateUrl: exchanges[2].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $600 USDT",
     bonusType: "Registro + Depósito",
     description:
@@ -78,7 +78,7 @@ const promos: Promo[] = [
     exchangeName: "Bitget",
     logo: "/logos/bitget.svg",
     affiliateUrl: exchanges[5].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $6,200 USDT",
     bonusType: "Registro + Depósito",
     description:
@@ -90,7 +90,7 @@ const promos: Promo[] = [
     exchangeName: "KuCoin",
     logo: "/logos/kucoin.svg",
     affiliateUrl: exchanges[4].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $500 USDT",
     bonusType: "Registro",
     description:
@@ -102,7 +102,7 @@ const promos: Promo[] = [
     exchangeName: "Gate.io",
     logo: "/logos/gateio.svg",
     affiliateUrl: exchanges[6].bonus.affiliateUrl,
-    promoCode: "CRIPTOCOMPARA",
+    promoCode: "CRIPTOEMPIRE",
     bonusAmount: "Hasta $5,500 USDT",
     bonusType: "Registro + Depósito",
     description:

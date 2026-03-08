@@ -14,16 +14,19 @@ const footerLinks = {
     { href: "/promociones", label: "Promociones" },
     { href: "/guias", label: "Guías" },
     { href: "/#quiz", label: "Quiz: ¿Cuál me conviene?" },
+    { href: "/sobre-nosotros", label: "Sobre nosotros" },
   ],
   paises: [
     { href: "/argentina", label: "🇦🇷 Argentina" },
     { href: "/mexico", label: "🇲🇽 México" },
     { href: "/colombia", label: "🇨🇴 Colombia" },
+    { href: "/peru", label: "🇵🇪 Perú" },
+    { href: "/chile", label: "🇨🇱 Chile" },
   ],
   legal: [
-    { href: "#", label: "Términos de uso" },
-    { href: "#", label: "Política de privacidad" },
-    { href: "#", label: "Divulgación de afiliados" },
+    { href: "/terminos", label: "Términos de uso" },
+    { href: "/privacidad", label: "Política de privacidad" },
+    { href: "/sobre-nosotros", label: "Divulgación de afiliados" },
   ],
 };
 
@@ -106,9 +109,9 @@ export default function Footer() {
           <span className="text-[var(--border)]">|</span>
           <Link href="/colombia" className="hover:text-[var(--text-secondary)] transition-colors">🇨🇴 Colombia</Link>
           <span className="text-[var(--border)]">|</span>
-          <span>🇵🇪 Perú</span>
+          <Link href="/peru" className="hover:text-[var(--text-secondary)] transition-colors">🇵🇪 Perú</Link>
           <span className="text-[var(--border)]">|</span>
-          <span>🇨🇱 Chile</span>
+          <Link href="/chile" className="hover:text-[var(--text-secondary)] transition-colors">🇨🇱 Chile</Link>
         </div>
 
         {/* Bottom */}

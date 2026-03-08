@@ -59,13 +59,18 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors relative ${
                   isActive(link.href)
                     ? "text-[var(--accent-primary)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 {link.label}
+                {link.href === "/guias" && (
+                  <span className="absolute -top-2 -right-8 text-[9px] font-bold bg-emerald-500 text-white px-1.5 py-0.5 rounded-full leading-none">
+                    NUEVO
+                  </span>
+                )}
               </Link>
             ))}
           </div>

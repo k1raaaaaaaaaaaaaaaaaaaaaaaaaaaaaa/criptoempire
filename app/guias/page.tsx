@@ -41,14 +41,14 @@ const guides = [
     live: true,
   },
   {
-    slug: "como-hacer-trading-futuros",
+    slug: "trading-futuros-principiantes",
     category: "Tutorial",
     categoryVariant: "blue" as const,
     title: "Guía de trading de futuros para principiantes",
     excerpt:
       "Todo lo que necesitas saber sobre futuros de criptomonedas: apalancamiento, márgenes, liquidaciones y más.",
     readTime: "15 min",
-    live: false,
+    live: true,
   },
   {
     slug: "mejores-exchanges-colombia",
@@ -58,17 +58,17 @@ const guides = [
     excerpt:
       "Análisis de los exchanges que mejor funcionan en Colombia: P2P en pesos colombianos, comisiones y seguridad.",
     readTime: "10 min",
-    live: false,
+    live: true,
   },
   {
-    slug: "que-es-staking-cripto",
+    slug: "que-es-staking-criptomonedas",
     category: "Educación",
     categoryVariant: "purple" as const,
     title: "¿Qué es el staking de criptomonedas y cómo funciona?",
     excerpt:
       "Aprende a generar ingresos pasivos con tus criptomonedas a través del staking. Mejores plataformas y rendimientos.",
     readTime: "7 min",
-    live: false,
+    live: true,
   },
 ];
 
