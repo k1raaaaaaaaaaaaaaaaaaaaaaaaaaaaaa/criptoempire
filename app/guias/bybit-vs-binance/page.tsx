@@ -8,13 +8,13 @@ import { exchanges } from "@/data/exchanges";
 import { formatPercent } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Bybit vs Binance 2025: ¿Cuál es Mejor para LATAM? | CriptoCompara",
+  title: "Bybit vs Binance 2026: ¿Cuál es Mejor para LATAM? | CriptoEmpire",
   description:
-    "Comparativa detallada Bybit vs Binance en 2025. Comisiones, seguridad, KYC, bonos y disponibilidad en Argentina, México y Colombia. ¿Cuál elegir?",
+    "Comparativa detallada Bybit vs Binance en 2026. Comisiones, seguridad, KYC, bonos y disponibilidad en Argentina, México y Colombia. ¿Cuál elegir?",
   keywords:
-    "bybit vs binance, bybit o binance, mejor exchange 2025, bybit binance comparación",
+    "bybit vs binance, bybit o binance, mejor exchange 2026, bybit binance comparación",
   openGraph: {
-    title: "Bybit vs Binance 2025: ¿Cuál es Mejor?",
+    title: "Bybit vs Binance 2026: ¿Cuál es Mejor?",
     description: "Comparativa completa para usuarios de LATAM.",
     type: "article",
     locale: "es_AR",
@@ -41,11 +41,11 @@ export default function BybitVsBinance() {
             <Badge variant="amber">Comparativa</Badge>
             <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
               <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> 12 min</span>
-              <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> Marzo 2025</span>
+              <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> Marzo 2026</span>
             </div>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] font-display leading-tight mb-4">
-            Bybit vs Binance: ¿Cuál es Mejor en 2025?
+            Bybit vs Binance: ¿Cuál es Mejor en 2026?
           </h1>
           <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
             Dos de los exchanges más grandes del mundo compiten por los usuarios
@@ -247,12 +247,12 @@ export default function BybitVsBinance() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Bybit vs Binance 2025: ¿Cuál es Mejor para LATAM?",
+            headline: "Bybit vs Binance 2026: ¿Cuál es Mejor para LATAM?",
             description: "Comparativa detallada de Bybit vs Binance para usuarios de Latinoamérica.",
-            datePublished: "2025-03-01",
-            dateModified: "2025-03-08",
-            author: { "@type": "Organization", name: "CriptoCompara" },
-            publisher: { "@type": "Organization", name: "CriptoCompara" },
+            datePublished: "2026-03-01",
+            dateModified: "2026-03-08",
+            author: { "@type": "Organization", name: "CriptoEmpire" },
+            publisher: { "@type": "Organization", name: "CriptoEmpire" },
           }),
         }}
       />

@@ -7,13 +7,13 @@ import { exchanges } from "@/data/exchanges";
 import { formatPercent } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Los 5 Mejores Exchanges sin KYC en México (2025) | CriptoCompara",
+  title: "Los 5 Mejores Exchanges sin KYC en México (2026) | CriptoEmpire",
   description:
-    "Descubre los mejores exchanges de criptomonedas que puedes usar en México sin verificación de identidad (KYC) en 2025. MEXC, Bybit, KuCoin y más.",
+    "Descubre los mejores exchanges de criptomonedas que puedes usar en México sin verificación de identidad (KYC) en 2026. MEXC, Bybit, KuCoin y más.",
   keywords:
-    "exchange sin kyc méxico, comprar bitcoin sin verificación, exchange sin identidad, cripto sin kyc 2025",
+    "exchange sin kyc méxico, comprar bitcoin sin verificación, exchange sin identidad, cripto sin kyc 2026",
   openGraph: {
-    title: "Mejores Exchanges sin KYC en México 2025",
+    title: "Mejores Exchanges sin KYC en México 2026",
     description: "Los exchanges donde puedes operar sin enviar documentos.",
     type: "article",
     locale: "es_MX",
@@ -37,7 +37,7 @@ export default function ExchangesSinKYCMexico() {
             <Badge variant="green">Rankings</Badge>
             <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
               <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> 6 min</span>
-              <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> Marzo 2025</span>
+              <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> Marzo 2026</span>
             </div>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] font-display leading-tight mb-4">
@@ -263,12 +263,12 @@ export default function ExchangesSinKYCMexico() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Los 5 Mejores Exchanges sin KYC en México (2025)",
+            headline: "Los 5 Mejores Exchanges sin KYC en México (2026)",
             description: "Descubre los exchanges que puedes usar sin verificación de identidad en México.",
-            datePublished: "2025-03-01",
-            dateModified: "2025-03-08",
-            author: { "@type": "Organization", name: "CriptoCompara" },
-            publisher: { "@type": "Organization", name: "CriptoCompara" },
+            datePublished: "2026-03-01",
+            dateModified: "2026-03-08",
+            author: { "@type": "Organization", name: "CriptoEmpire" },
+            publisher: { "@type": "Organization", name: "CriptoEmpire" },
           }),
         }}
       />

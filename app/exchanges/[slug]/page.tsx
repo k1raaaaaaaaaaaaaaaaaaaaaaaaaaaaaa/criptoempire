@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, X as XIcon, Shield, Zap, Users, Globe } from "lucide-react";
 import { exchanges, getExchangeBySlug } from "@/data/exchanges";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 import StarRating from "@/components/ui/StarRating";
 import ScoreBar from "@/components/ui/ScoreBar";
 import AffiliateButton from "@/components/ui/AffiliateButton";
@@ -25,10 +25,10 @@ export async function generateMetadata({
   if (!exchange) return { title: "Exchange no encontrado" };
 
   return {
-    title: `${exchange.name} Review 2025 — Comisiones, Bonos y Opiniones | CriptoCompara`,
+    title: `${exchange.name} Review 2026 — Comisiones, Bonos y Opiniones | CriptoEmpire`,
     description: `Análisis completo de ${exchange.name}: comisiones desde ${formatPercent(exchange.fees.spotTaker)}, bono de ${exchange.bonus.amount}. ¿Es seguro para Latinoamérica? Lee nuestra opinión.`,
     openGraph: {
-      title: `${exchange.name} — Review Completa 2025`,
+      title: `${exchange.name} — Review Completa 2026`,
       description: exchange.description,
       type: "article",
       locale: "es_AR",
@@ -65,15 +65,7 @@ export default function ExchangeDetailPage({
           </Link>
 
           <div className="flex flex-col sm:flex-row items-start gap-6">
-            <div className="h-20 w-20 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden p-3 shrink-0">
-              <Image
-                src={exchange.logo}
-                alt={exchange.name}
-                width={56}
-                height={56}
-                className="object-contain"
-              />
-            </div>
+            <ExchangeLogo exchangeId={exchange.id} size={56} />
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] font-display">
@@ -365,9 +357,7 @@ export default function ExchangeDetailPage({
                     className="flex items-center gap-4 rounded-xl border border-[var(--border)] p-4 hover:border-[var(--accent-primary)]/30 hover:bg-[var(--bg-hover)] transition-all"
                     style={{ background: "var(--gradient-card)" }}
                   >
-                    <div className="h-10 w-10 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden p-1.5 shrink-0">
-                      <Image src={other.logo} alt={other.name} width={28} height={28} className="object-contain" />
-                    </div>
+                    <ExchangeLogo exchangeId={other.id} size={28} />
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-[var(--text-primary)] text-sm">{other.name}</div>
                       <div className="text-xs text-[var(--text-muted)]">
@@ -389,8 +379,8 @@ export default function ExchangeDetailPage({
                 style={{ background: "var(--gradient-card)" }}
               >
                 <div className="text-center mb-4">
-                  <div className="h-16 w-16 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden p-3 mx-auto mb-3">
-                    <Image src={exchange.logo} alt={exchange.name} width={40} height={40} className="object-contain" />
+                  <div className="mx-auto mb-3">
+                    <ExchangeLogo exchangeId={exchange.id} size={40} />
                   </div>
                   <h3 className="text-lg font-bold text-[var(--text-primary)] font-display">
                     Abrir cuenta en {exchange.name}

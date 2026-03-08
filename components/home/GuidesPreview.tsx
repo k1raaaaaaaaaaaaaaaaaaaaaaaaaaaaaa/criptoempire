@@ -19,7 +19,7 @@ const guides = [
     slug: "bybit-vs-binance",
     category: "Comparativa",
     categoryVariant: "amber" as const,
-    title: "Bybit vs Binance: ¿Cuál es mejor en 2025?",
+    title: "Bybit vs Binance: ¿Cuál es mejor en 2026?",
     excerpt:
       "Comparamos comisiones, seguridad, liquidez y funciones para LATAM de los dos exchanges más populares.",
     readTime: "12 min",
@@ -30,7 +30,7 @@ const guides = [
     categoryVariant: "green" as const,
     title: "Los mejores exchanges sin KYC en México",
     excerpt:
-      "Descubre qué exchanges te permiten operar sin verificación de identidad desde México en 2025.",
+      "Descubre qué exchanges te permiten operar sin verificación de identidad desde México en 2026.",
     readTime: "6 min",
   },
 ];

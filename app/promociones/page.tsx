@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Gift, Tag, Clock } from "lucide-react";
 import { exchanges } from "@/data/exchanges";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import PromoCodeCard from "@/components/ui/PromoCodeCard";
 import Badge from "@/components/ui/Badge";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 
 type FilterType = "all" | "registro" | "deposito" | "trading";
 
@@ -183,15 +183,7 @@ export default function PromocionesPage() {
             >
               {/* Header */}
               <div className="flex items-center gap-4 mb-4">
-                <div className="h-14 w-14 rounded-xl bg-white/10 flex items-center justify-center overflow-hidden p-2 shrink-0">
-                  <Image
-                    src={promo.logo}
-                    alt={promo.exchangeName}
-                    width={36}
-                    height={36}
-                    className="object-contain"
-                  />
-                </div>
+                <ExchangeLogo exchangeId={promo.exchangeId} size={36} />
                 <div className="flex-1">
                   <h3 className="font-bold text-[var(--text-primary)] font-display text-lg">
                     {promo.exchangeName}

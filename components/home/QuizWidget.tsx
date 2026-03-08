@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { exchanges, Exchange } from "@/data/exchanges";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import StarRating from "@/components/ui/StarRating";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 
 interface QuizAnswer {
   experience?: "nuevo" | "intermedio" | "experto";
@@ -201,15 +201,7 @@ export default function QuizWidget() {
                       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] font-bold text-sm shrink-0">
                         #{i + 1}
                       </div>
-                      <div className="h-10 w-10 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden p-1 shrink-0">
-                        <Image
-                          src={exchange.logo}
-                          alt={exchange.name}
-                          width={28}
-                          height={28}
-                          className="object-contain"
-                        />
-                      </div>
+                      <ExchangeLogo exchangeId={exchange.id} size={28} />
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-[var(--text-primary)]">
                           {exchange.name}

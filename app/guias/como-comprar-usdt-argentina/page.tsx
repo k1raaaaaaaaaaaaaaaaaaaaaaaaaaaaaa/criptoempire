@@ -6,13 +6,13 @@ import AffiliateButton from "@/components/ui/AffiliateButton";
 import { exchanges } from "@/data/exchanges";
 
 export const metadata: Metadata = {
-  title: "Cómo Comprar USDT en Argentina Paso a Paso (2025) | CriptoCompara",
+  title: "Cómo Comprar USDT en Argentina Paso a Paso (2026) | CriptoEmpire",
   description:
-    "Guía completa para comprar USDT (Tether) desde Argentina en 2025. Métodos P2P, transferencia bancaria, tarjeta de crédito. Comparamos Bybit, Binance y MEXC.",
+    "Guía completa para comprar USDT (Tether) desde Argentina en 2026. Métodos P2P, transferencia bancaria, tarjeta de crédito. Comparamos Bybit, Binance y MEXC.",
   keywords:
-    "comprar usdt argentina, comprar tether argentina, usdt pesos argentinos, cripto argentina 2025",
+    "comprar usdt argentina, comprar tether argentina, usdt pesos argentinos, cripto argentina 2026",
   openGraph: {
-    title: "Cómo Comprar USDT en Argentina Paso a Paso (2025)",
+    title: "Cómo Comprar USDT en Argentina Paso a Paso (2026)",
     description:
       "Guía completa para comprar USDT desde Argentina. P2P, transferencia y tarjeta.",
     type: "article",
@@ -46,7 +46,7 @@ export default function ComoComprarUSDTArgentina() {
                 <Clock className="h-3 w-3" /> 8 min de lectura
               </span>
               <span className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" /> Marzo 2025
+                <Calendar className="h-3 w-3" /> Marzo 2026
               </span>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function ComoComprarUSDTArgentina() {
           </h1>
           <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
             Guía completa y actualizada para comprar USDT (Tether) desde
-            Argentina en 2025. Comparamos los mejores métodos: P2P, transferencia
+            Argentina en 2026. Comparamos los mejores métodos: P2P, transferencia
             bancaria y tarjeta de crédito.
           </p>
         </header>
@@ -310,12 +310,12 @@ export default function ComoComprarUSDTArgentina() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Cómo Comprar USDT en Argentina Paso a Paso (2025)",
-            description: "Guía completa para comprar USDT desde Argentina en 2025.",
-            datePublished: "2025-03-01",
-            dateModified: "2025-03-08",
-            author: { "@type": "Organization", name: "CriptoCompara" },
-            publisher: { "@type": "Organization", name: "CriptoCompara" },
+            headline: "Cómo Comprar USDT en Argentina Paso a Paso (2026)",
+            description: "Guía completa para comprar USDT desde Argentina en 2026.",
+            datePublished: "2026-03-01",
+            dateModified: "2026-03-08",
+            author: { "@type": "Organization", name: "CriptoEmpire" },
+            publisher: { "@type": "Organization", name: "CriptoEmpire" },
           }),
         }}
       />

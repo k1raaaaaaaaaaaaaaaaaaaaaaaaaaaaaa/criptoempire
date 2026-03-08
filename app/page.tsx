@@ -3,6 +3,7 @@ import StatsBar from "@/components/home/StatsBar";
 import FeaturedExchanges from "@/components/home/FeaturedExchanges";
 import ComparisonTable from "@/components/home/ComparisonTable";
 import QuizWidget from "@/components/home/QuizWidget";
+import SocialProof from "@/components/home/SocialProof";
 import TrustSection from "@/components/home/TrustSection";
 import GuidesPreview from "@/components/home/GuidesPreview";
 import FAQSection from "@/components/home/FAQSection";
@@ -25,13 +26,16 @@ export default function Home() {
       {/* E - Interactive Quiz */}
       <QuizWidget />
 
-      {/* F - Trust / Why Us */}
+      {/* F - Social Proof */}
+      <SocialProof />
+
+      {/* G - Trust / Why Us */}
       <TrustSection />
 
-      {/* G - Guides Preview */}
+      {/* H - Guides Preview */}
       <GuidesPreview />
 
-      {/* H - FAQ */}
+      {/* I - FAQ */}
       <FAQSection />
     </>
   );

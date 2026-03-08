@@ -4,7 +4,7 @@ import { Clock, ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Guías de Criptomonedas para Latinoamérica 2025 | CriptoCompara",
+  title: "Guías de Criptomonedas para Latinoamérica 2026 | CriptoEmpire",
   description:
     "Aprende a comprar, vender y operar criptomonedas de forma segura en Argentina, México, Colombia y más. Guías paso a paso actualizadas.",
 };
@@ -16,7 +16,7 @@ const guides = [
     categoryVariant: "blue" as const,
     title: "Cómo comprar USDT en Argentina paso a paso",
     excerpt:
-      "Guía completa para comprar USDT desde Argentina usando P2P, transferencia bancaria o tarjeta de crédito en 2025.",
+      "Guía completa para comprar USDT desde Argentina usando P2P, transferencia bancaria o tarjeta de crédito en 2026.",
     readTime: "8 min",
     live: true,
   },
@@ -24,7 +24,7 @@ const guides = [
     slug: "bybit-vs-binance",
     category: "Comparativa",
     categoryVariant: "amber" as const,
-    title: "Bybit vs Binance: ¿Cuál es mejor en 2025?",
+    title: "Bybit vs Binance: ¿Cuál es mejor en 2026?",
     excerpt:
       "Comparamos comisiones, seguridad, liquidez y funciones para LATAM de los dos exchanges más populares.",
     readTime: "12 min",
@@ -36,7 +36,7 @@ const guides = [
     categoryVariant: "green" as const,
     title: "Los mejores exchanges sin KYC en México",
     excerpt:
-      "Descubre qué exchanges te permiten operar sin verificación de identidad desde México en 2025.",
+      "Descubre qué exchanges te permiten operar sin verificación de identidad desde México en 2026.",
     readTime: "6 min",
     live: true,
   },
@@ -54,7 +54,7 @@ const guides = [
     slug: "mejores-exchanges-colombia",
     category: "Rankings",
     categoryVariant: "green" as const,
-    title: "Los 5 mejores exchanges para Colombia en 2025",
+    title: "Los 5 mejores exchanges para Colombia en 2026",
     excerpt:
       "Análisis de los exchanges que mejor funcionan en Colombia: P2P en pesos colombianos, comisiones y seguridad.",
     readTime: "10 min",

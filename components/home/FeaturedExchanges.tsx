@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { getFeaturedExchanges } from "@/data/exchanges";
 import StarRating from "@/components/ui/StarRating";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
+import ExchangeLogo, { getExchangeColor } from "@/components/ui/ExchangeLogo";
 import { formatPercent } from "@/lib/utils";
 
 const badgeConfig: Record<string, { label: string; icon: string; variant: "blue" | "green" | "amber" | "purple" }> = {
@@ -15,6 +15,52 @@ const badgeConfig: Record<string, { label: string; icon: string; variant: "blue"
   "best-beginners": { label: "Mejor para principiantes", icon: "🎓", variant: "purple" },
   "no-kyc": { label: "Sin KYC", icon: "🔓", variant: "green" },
 };
+
+const volume24h: Record<string, string> = {
+  bybit: "$12.4B",
+  mexc: "$3.2B",
+  okx: "$8.7B",
+};
+
+function ScoreRing({ score, size = 56 }: { score: number; size?: number }) {
+  const maxScore = 10;
+  const percentage = (score / maxScore) * 100;
+  const radius = (size - 6) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth={3}
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="var(--accent-primary)"
+          strokeWidth={3}
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={strokeDashoffset}
+          className="transition-all duration-1000"
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-sm font-bold text-[var(--text-primary)]">
+          {score.toFixed(1)}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export default function FeaturedExchanges() {
   const featured = getFeaturedExchanges();
@@ -34,6 +80,14 @@ export default function FeaturedExchanges() {
         <div className="grid md:grid-cols-3 gap-6">
           {featured.map((exchange, i) => {
             const badge = exchange.badge ? badgeConfig[exchange.badge] : null;
+            const overallScore =
+              (exchange.scores.security +
+                exchange.scores.fees +
+                exchange.scores.liquidity +
+                exchange.scores.ux +
+                exchange.scores.latamSupport) /
+              5;
+            const brandColor = getExchangeColor(exchange.id);
 
             return (
               <motion.div
@@ -42,83 +96,90 @@ export default function FeaturedExchanges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="card-hover relative rounded-2xl border border-[var(--border)] p-6 sm:p-8 overflow-hidden"
-                style={{ background: "var(--gradient-card)" }}
+                className="group relative rounded-2xl border border-[var(--border)] overflow-hidden"
+                style={{
+                  background: "var(--gradient-card)",
+                  perspective: "1000px",
+                }}
               >
-                {/* Recommended highlight */}
-                {exchange.badge === "popular" && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--accent-primary)]" />
-                )}
+                {/* Brand color top border */}
+                <div className="h-1" style={{ backgroundColor: brandColor }} />
 
-                {/* Badge */}
-                {badge && (
-                  <div className="mb-4">
-                    <Badge variant={badge.variant}>
-                      {badge.icon} {badge.label}
-                    </Badge>
+                <div className="p-6 sm:p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                  {/* Badge */}
+                  {badge && (
+                    <div className="mb-4">
+                      <Badge variant={badge.variant}>
+                        {badge.icon} {badge.label}
+                      </Badge>
+                    </div>
+                  )}
+
+                  {/* Logo, Name, Score Ring */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <ExchangeLogo exchangeId={exchange.id} size={48} />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[var(--text-primary)] font-display">
+                        {exchange.name}
+                      </h3>
+                      <StarRating rating={exchange.rating} size={14} />
+                    </div>
+                    <ScoreRing score={overallScore} />
                   </div>
-                )}
 
-                {/* Logo & Name */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-14 w-14 rounded-xl bg-white/10 flex items-center justify-center overflow-hidden p-2">
-                    <Image
-                      src={exchange.logo}
-                      alt={exchange.name}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
+                  {/* Country flags */}
+                  <div className="flex items-center gap-1.5 mb-4 text-sm">
+                    <span title="Argentina">🇦🇷</span>
+                    <span title="México">🇲🇽</span>
+                    <span title="Colombia">🇨🇴</span>
+                    <span title="Perú">🇵🇪</span>
+                    <span title="Chile">🇨🇱</span>
+                    <span className="text-xs text-[var(--text-muted)] ml-1">Disponible</span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[var(--text-primary)] font-display">
-                      {exchange.name}
-                    </h3>
-                    <StarRating rating={exchange.rating} size={14} />
-                  </div>
-                </div>
 
-                {/* Key selling point */}
-                <p className="text-sm text-[var(--text-secondary)] mb-4 line-clamp-2">
-                  {exchange.description}
-                </p>
-
-                {/* Fee highlight */}
-                <div className="flex items-center justify-between rounded-xl bg-[var(--bg-primary)]/50 p-3 mb-4">
-                  <div>
-                    <div className="text-xs text-[var(--text-muted)]">Comisión Spot</div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)]">
-                      {formatPercent(exchange.fees.spotMaker)} / {formatPercent(exchange.fees.spotTaker)}
+                  {/* Stats row */}
+                  <div className="grid grid-cols-3 gap-2 rounded-xl bg-[var(--bg-primary)]/50 p-3 mb-4 text-center">
+                    <div>
+                      <div className="text-[10px] text-[var(--text-muted)]">Spot</div>
+                      <div className="text-sm font-semibold text-[var(--text-primary)]">
+                        {formatPercent(exchange.fees.spotTaker)}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-[var(--text-muted)]">Futuros</div>
+                      <div className="text-sm font-semibold text-[var(--text-primary)]">
+                        {formatPercent(exchange.fees.futuresTaker)}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-[var(--text-muted)]">Vol. 24h</div>
+                      <div className="text-sm font-semibold text-[var(--text-primary)]">
+                        {volume24h[exchange.id] || "N/A"}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-xs text-[var(--text-muted)]">Comisión Futuros</div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)]">
-                      {formatPercent(exchange.fees.futuresMaker)} / {formatPercent(exchange.fees.futuresTaker)}
+
+                  {/* Bonus — prominent pill */}
+                  <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-3 mb-6 text-center shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+                    <div className="text-xs text-emerald-400 mb-0.5">Bono de bienvenida</div>
+                    <div className="text-lg font-bold text-emerald-300">
+                      {exchange.bonus.amount}
                     </div>
                   </div>
+
+                  {/* CTA */}
+                  <AffiliateButton
+                    href={exchange.bonus.affiliateUrl}
+                    label="ABRIR CUENTA →"
+                    variant="primary"
+                    size="lg"
+                    className="w-full"
+                  />
+
+                  <p className="text-[10px] text-[var(--text-muted)] text-center mt-3">
+                    Este sitio puede recibir compensación por referidos
+                  </p>
                 </div>
-
-                {/* Bonus */}
-                <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/20 p-3 mb-6 text-center">
-                  <div className="text-xs text-emerald-400 mb-0.5">Bono de bienvenida</div>
-                  <div className="text-base font-bold text-emerald-300">
-                    {exchange.bonus.amount}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <AffiliateButton
-                  href={exchange.bonus.affiliateUrl}
-                  label={`ABRIR CUENTA →`}
-                  variant="primary"
-                  size="lg"
-                  className="w-full"
-                />
-
-                <p className="text-[10px] text-[var(--text-muted)] text-center mt-3">
-                  Este sitio puede recibir compensación por referidos
-                </p>
               </motion.div>
             );
           })}

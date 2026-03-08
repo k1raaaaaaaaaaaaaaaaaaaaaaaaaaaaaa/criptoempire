@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { exchanges } from "@/data/exchanges";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 import StarRating from "@/components/ui/StarRating";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
 import { formatPercent } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Todos los Exchanges de Criptomonedas 2025 | CriptoCompara",
+  title: "Todos los Exchanges de Criptomonedas 2026 | CriptoEmpire",
   description:
     "Lista completa de los 10 mejores exchanges de criptomonedas para Latinoamérica. Compara comisiones, seguridad y bonos.",
 };
@@ -46,15 +46,7 @@ export default function ExchangesPage() {
               >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <div className="flex items-center gap-4 flex-1 min-w-0">
-                    <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center overflow-hidden p-2 shrink-0">
-                      <Image
-                        src={exchange.logo}
-                        alt={exchange.name}
-                        width={32}
-                        height={32}
-                        className="object-contain"
-                      />
-                    </div>
+                    <ExchangeLogo exchangeId={exchange.id} size={32} />
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <Link

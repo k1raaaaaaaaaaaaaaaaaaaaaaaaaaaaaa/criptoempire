@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Check, X as XIcon, ChevronDown, Trophy } from "lucide-react";
 import { exchanges, Exchange } from "@/data/exchanges";
 import StarRating from "@/components/ui/StarRating";
 import ScoreBar from "@/components/ui/ScoreBar";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 import { formatPercent } from "@/lib/utils";
 
 export default function CompararPage() {
@@ -239,9 +239,7 @@ function ExchangeSelector({
         className="w-full flex items-center gap-3 rounded-xl border border-[var(--border)] p-3 hover:border-[var(--accent-primary)]/30 transition-colors text-left"
         style={{ background: "var(--gradient-card)" }}
       >
-        <div className="h-8 w-8 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden p-1 shrink-0">
-          <Image src={selected.logo} alt={selected.name} width={24} height={24} className="object-contain" />
-        </div>
+        <ExchangeLogo exchangeId={selected.id} size={24} />
         <span className="font-semibold text-[var(--text-primary)] flex-1 text-sm sm:text-base">
           {selected.name}
         </span>
@@ -266,9 +264,7 @@ function ExchangeSelector({
                   ex.id === selected.id ? "bg-[var(--accent-primary)]/10" : ""
                 }`}
               >
-                <div className="h-6 w-6 rounded bg-white/10 flex items-center justify-center overflow-hidden p-0.5 shrink-0">
-                  <Image src={ex.logo} alt={ex.name} width={18} height={18} className="object-contain" />
-                </div>
+                <ExchangeLogo exchangeId={ex.id} size={18} />
                 <span className="text-[var(--text-primary)]">{ex.name}</span>
                 <span className="text-xs text-[var(--text-muted)] ml-auto">{ex.rating.toFixed(1)}★</span>
               </button>
@@ -297,9 +293,7 @@ function ExchangeSummaryCard({
         <Badge variant="blue" className="mb-3">🏆 Ganador General</Badge>
       )}
       <div className="flex items-center gap-3 mb-4">
-        <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center overflow-hidden p-2 shrink-0">
-          <Image src={exchange.logo} alt={exchange.name} width={32} height={32} className="object-contain" />
-        </div>
+        <ExchangeLogo exchangeId={exchange.id} size={32} />
         <div>
           <h3 className="font-bold text-[var(--text-primary)] font-display">{exchange.name}</h3>
           <StarRating rating={exchange.rating} size={13} />
