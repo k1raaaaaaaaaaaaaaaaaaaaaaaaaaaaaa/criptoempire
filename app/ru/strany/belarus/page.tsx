@@ -10,7 +10,7 @@ import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Криптобиржи для Беларуси 2026 | КриптоЭмпайр",
+  title: "Криптобиржи для Беларуси 2026 | CriptoEmpire",
   description:
     "Лучшие криптобиржи для Беларуси в 2026 году. ПВТ, декрет о криптовалютах, покупка за BYN, налоговые льготы. Актуальный рейтинг бирж.",
   keywords:

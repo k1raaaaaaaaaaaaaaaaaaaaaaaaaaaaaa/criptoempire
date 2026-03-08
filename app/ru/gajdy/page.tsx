@@ -4,7 +4,7 @@ import Badge from "@/components/ui/Badge";
 import { Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Гайды по криптовалютам для России и СНГ | КриптоЭмпайр",
+  title: "Гайды по криптовалютам для России и СНГ | CriptoEmpire",
   description:
     "Пошаговые гайды по покупке, продаже и выводу криптовалюты в России и СНГ. P2P, обменники, налоги, VPN — всё что нужно знать.",
 };

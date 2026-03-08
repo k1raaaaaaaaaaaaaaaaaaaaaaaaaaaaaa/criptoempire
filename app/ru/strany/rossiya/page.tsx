@@ -10,7 +10,7 @@ import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Криптобиржи для России 2026 — Рейтинг и обзоры | КриптоЭмпайр",
+  title: "Криптобиржи для России 2026 — Рейтинг и обзоры | CriptoEmpire",
   description:
     "Лучшие криптобиржи для России в 2026 году. Сравнение бирж с P2P рублями, VPN-статус, налоги, способы оплаты через СБП, Тинькофф, Сбербанк. Актуальный рейтинг.",
   keywords:

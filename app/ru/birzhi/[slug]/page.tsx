@@ -34,10 +34,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const exchange = getExchangeRUBySlug(params.slug);
   if (!exchange)
-    return { title: "Биржа не найдена | КриптоЭмпайр" };
+    return { title: "Биржа не найдена | CriptoEmpire" };
 
   return {
-    title: `${exchange.name} — Обзор 2026, комиссии, бонусы и работа в России | КриптоЭмпайр`,
+    title: `${exchange.name} — Обзор 2026, комиссии, бонусы и работа в России | CriptoEmpire`,
     description: `Подробный обзор ${exchange.name}: комиссии от ${(exchange.fees.spotMaker * 100).toFixed(2)}%, бонус ${exchange.bonus.amount}. ${exchange.cis.vpnRequired ? "Нужен VPN из России." : "Работает в России."} Рейтинг ${exchange.rating}/5.`,
     openGraph: {
       title: `${exchange.name} — Полный обзор 2026`,

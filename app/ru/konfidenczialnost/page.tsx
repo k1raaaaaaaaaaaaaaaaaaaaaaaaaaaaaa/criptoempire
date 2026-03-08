@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Политика конфиденциальности | КриптоЭмпайр",
-  description: "Политика конфиденциальности сайта КриптоЭмпайр — как мы обрабатываем ваши данные.",
+  title: "Политика конфиденциальности | CriptoEmpire",
+  description: "Политика конфиденциальности сайта CriptoEmpire — как мы обрабатываем ваши данные.",
 };
 
 export default function KonfidenczialnostPage() {
@@ -17,7 +17,7 @@ export default function KonfidenczialnostPage() {
 
           <h2 className="text-xl font-bold text-[var(--text-primary)] mt-8">1. Какие данные мы собираем</h2>
           <p>
-            КриптоЭмпайр собирает минимум данных. Мы не требуем регистрации и не собираем персональные данные.
+            CriptoEmpire собирает минимум данных. Мы не требуем регистрации и не собираем персональные данные.
             Автоматически собираются: IP-адрес, тип браузера, страна посещения, просмотренные страницы —
             через Google Analytics для улучшения сайта.
           </p>

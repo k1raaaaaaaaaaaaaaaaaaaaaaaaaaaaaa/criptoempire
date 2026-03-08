@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "P2P трейдинг в России — полный гайд 2026 | КриптоЭмпайр",
+  title: "P2P трейдинг в России — полный гайд 2026 | CriptoEmpire",
   description:
     "Как безопасно торговать P2P криптовалютой в России: лучшие площадки Bybit, Bitget, KuCoin. Защита от мошенников, эскроу, арбитраж.",
 };

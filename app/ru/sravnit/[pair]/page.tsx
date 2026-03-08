@@ -100,7 +100,7 @@ export async function generateMetadata({
   const name2 = exchangeNames[parsed.slug2] || parsed.slug2;
 
   return {
-    title: `${name1} vs ${name2} — Какая биржа лучше в 2026? | КриптоЭмпайр`,
+    title: `${name1} vs ${name2} — Какая биржа лучше в 2026? | CriptoEmpire`,
     description: `Сравнение ${name1} и ${name2}: комиссии, безопасность, P2P с рублями, доступ из России. Узнай, какая биржа лучше для СНГ в 2026 году.`,
   };
 }

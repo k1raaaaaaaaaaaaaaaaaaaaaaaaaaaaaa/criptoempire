@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Работает ли Bybit без VPN в России в 2026? | КриптоЭмпайр",
+  title: "Работает ли Bybit без VPN в России в 2026? | CriptoEmpire",
   description:
     "Актуальный статус Bybit в России: работает ли сайт и приложение без VPN, какие функции доступны, какие заблокированы. Альтернативы на случай блокировки.",
 };

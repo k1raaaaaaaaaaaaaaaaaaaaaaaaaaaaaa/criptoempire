@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Лучшие криптобиржи для Казахстана 2026 — ТОП-5 рейтинг | КриптоЭмпайр",
+  title: "Лучшие криптобиржи для Казахстана 2026 — ТОП-5 рейтинг | CriptoEmpire",
   description:
     "Лучшие криптобиржи для Казахстана: регулирование AIFC, ввод через Kaspi Bank, P2P в KZT. Рейтинг и сравнение бирж для казахстанских трейдеров.",
 };

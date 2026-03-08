@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Как купить Bitcoin в России в 2026 — пошаговая инструкция | КриптоЭмпайр",
+  title: "Как купить Bitcoin в России в 2026 — пошаговая инструкция | CriptoEmpire",
   description:
     "5 способов купить Bitcoin в России: P2P, обменники, биржи, банковская карта, крипто-банкоматы. Пошаговая инструкция через Bybit P2P с Тинькофф и Сбер.",
 };

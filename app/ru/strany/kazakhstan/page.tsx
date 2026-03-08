@@ -10,7 +10,7 @@ import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Криптобиржи для Казахстана 2026 | КриптоЭмпайр",
+  title: "Криптобиржи для Казахстана 2026 | CriptoEmpire",
   description:
     "Лучшие криптобиржи для Казахстана в 2026 году. AIFC регулирование, покупка крипты за тенге через Kaspi Bank, налоги и легальный статус.",
   keywords:

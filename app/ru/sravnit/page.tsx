@@ -4,7 +4,7 @@ import ExchangeLogo from "@/components/ui/ExchangeLogo";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Сравнение криптобирж 2026 | КриптоЭмпайр",
+  title: "Сравнение криптобирж 2026 | CriptoEmpire",
   description:
     "Подробное сравнение криптобирж для России и СНГ",
 };

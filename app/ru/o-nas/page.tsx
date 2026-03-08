@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Shield, TrendingUp, Users, Eye } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "О нас — КриптоЭмпайр | Сравнение криптобирж для СНГ",
-  description: "Узнайте о КриптоЭмпайр — независимом ресурсе для сравнения криптовалютных бирж для России и стран СНГ.",
+  title: "О нас — CriptoEmpire | Сравнение криптобирж для СНГ",
+  description: "Узнайте о CriptoEmpire — независимом ресурсе для сравнения криптовалютных бирж для России и стран СНГ.",
 };
 
 export default function ONasPage() {
@@ -12,12 +12,12 @@ export default function ONasPage() {
     <div className="min-h-screen py-12 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-[var(--text-primary)] font-display mb-8">
-          О КриптоЭмпайр
+          О CriptoEmpire
         </h1>
 
         <div className="space-y-8 text-sm text-[var(--text-secondary)] leading-relaxed">
           <p className="text-base">
-            КриптоЭмпайр — независимый ресурс для сравнения криптовалютных бирж, ориентированный на
+            CriptoEmpire — независимый ресурс для сравнения криптовалютных бирж, ориентированный на
             русскоязычных пользователей из России, Казахстана, Беларуси и Украины.
           </p>
 
@@ -53,7 +53,7 @@ export default function ONasPage() {
 
           <h2 className="text-xl font-bold text-[var(--text-primary)] mt-8">Партнёрская программа</h2>
           <p>
-            КриптоЭмпайр участвует в партнёрских программах криптовалютных бирж. Это означает, что мы
+            CriptoEmpire участвует в партнёрских программах криптовалютных бирж. Это означает, что мы
             можем получать комиссию за регистрацию пользователей по нашим реферальным ссылкам.
           </p>
           <p>

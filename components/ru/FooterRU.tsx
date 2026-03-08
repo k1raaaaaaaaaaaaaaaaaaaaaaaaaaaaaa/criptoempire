@@ -45,7 +45,7 @@ export default function FooterRU() {
                 <Bitcoin className="h-5 w-5 text-white" />
               </div>
               <span className="font-bold text-[var(--text-primary)] font-display">
-                Крипто<span className="text-[var(--accent-primary)]">Эмпайр</span>
+                Cripto<span className="text-[var(--accent-primary)]">Empire</span>
               </span>
             </Link>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed">
@@ -108,10 +108,10 @@ export default function FooterRU() {
 
         <div className="mt-10 pt-6 border-t border-[var(--border)]">
           <p className="text-xs text-[var(--text-muted)] leading-relaxed max-w-3xl">
-            <strong>Предупреждение:</strong> КриптоЭмпайр содержит партнёрские ссылки. Мы можем получать комиссию за регистрацию по нашим ссылкам — это не влияет на наши обзоры и рейтинги. Торговля криптовалютами связана с высоким риском потери капитала. Инвестируйте только те средства, которые готовы потерять.
+            <strong>Предупреждение:</strong> CriptoEmpire содержит партнёрские ссылки. Мы можем получать комиссию за регистрацию по нашим ссылкам — это не влияет на наши обзоры и рейтинги. Торговля криптовалютами связана с высоким риском потери капитала. Инвестируйте только те средства, которые готовы потерять.
           </p>
           <p className="text-xs text-[var(--text-muted)] mt-4">
-            © 2026 КриптоЭмпайр. Все права защищены.
+            © 2026 CriptoEmpire. Все права защищены.
           </p>
         </div>
       </div>

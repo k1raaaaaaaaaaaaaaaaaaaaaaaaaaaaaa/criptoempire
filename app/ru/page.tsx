@@ -8,7 +8,7 @@ import VpnBadge from "@/components/ru/VpnBadge";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Лучшие криптобиржи для России и СНГ 2026 | КриптоЭмпайр",
+  title: "Лучшие криптобиржи для России и СНГ 2026 | CriptoEmpire",
   description:
     "Сравнение криптобирж для России, Казахстана, Беларуси и Украины. Рейтинг, комиссии, P2P с рублями, VPN-статус. Актуально на март 2026.",
   keywords: "лучшие криптобиржи, купить биткоин россия, bybit россия, криптобиржа без vpn, p2p рубли",

@@ -53,7 +53,7 @@ export default function NavbarRU() {
               <Bitcoin className={`text-white transition-all ${scrolled ? "h-4 w-4" : "h-5 w-5"}`} />
             </div>
             <span className={`font-bold text-[var(--text-primary)] font-display transition-all ${scrolled ? "text-lg" : "text-xl"}`}>
-              Крипто<span className="text-[var(--accent-primary)]">Эмпайр</span>
+              Cripto<span className="text-[var(--accent-primary)]">Empire</span>
             </span>
           </Link>
 

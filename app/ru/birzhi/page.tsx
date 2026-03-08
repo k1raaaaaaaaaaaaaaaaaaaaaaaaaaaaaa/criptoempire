@@ -7,7 +7,7 @@ import { AFFILIATE_LINKS_RU, ExchangeIdRU } from "@/config/affiliates-ru";
 import Badge from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
-  title: "Лучшие криптобиржи для России и СНГ 2026 | КриптоЭмпайр",
+  title: "Лучшие криптобиржи для России и СНГ 2026 | CriptoEmpire",
   description:
     "Полный рейтинг криптобирж для России и СНГ. Сравнение комиссий, P2P с рублями, VPN-статус, бонусы. Актуально на 2026 год.",
   keywords:
