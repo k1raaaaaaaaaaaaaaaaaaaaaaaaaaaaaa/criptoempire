@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +16,7 @@
     "framer-motion": "^12.35.1",
     "lucide-react": "^0.577.0",
     "next": "14.2.35",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^3.5.0"

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 
@@ -17,6 +18,7 @@ const guides = [
     excerpt:
       "Guía completa para comprar USDT desde Argentina usando P2P, transferencia bancaria o tarjeta de crédito en 2025.",
     readTime: "8 min",
+    live: true,
   },
   {
     slug: "bybit-vs-binance",
@@ -26,6 +28,7 @@ const guides = [
     excerpt:
       "Comparamos comisiones, seguridad, liquidez y funciones para LATAM de los dos exchanges más populares.",
     readTime: "12 min",
+    live: true,
   },
   {
     slug: "mejores-exchanges-sin-kyc-mexico",
@@ -35,6 +38,7 @@ const guides = [
     excerpt:
       "Descubre qué exchanges te permiten operar sin verificación de identidad desde México en 2025.",
     readTime: "6 min",
+    live: true,
   },
   {
     slug: "como-hacer-trading-futuros",
@@ -44,6 +48,7 @@ const guides = [
     excerpt:
       "Todo lo que necesitas saber sobre futuros de criptomonedas: apalancamiento, márgenes, liquidaciones y más.",
     readTime: "15 min",
+    live: false,
   },
   {
     slug: "mejores-exchanges-colombia",
@@ -53,6 +58,7 @@ const guides = [
     excerpt:
       "Análisis de los exchanges que mejor funcionan en Colombia: P2P en pesos colombianos, comisiones y seguridad.",
     readTime: "10 min",
+    live: false,
   },
   {
     slug: "que-es-staking-cripto",
@@ -62,6 +68,7 @@ const guides = [
     excerpt:
       "Aprende a generar ingresos pasivos con tus criptomonedas a través del staking. Mejores plataformas y rendimientos.",
     readTime: "7 min",
+    live: false,
   },
 ];
 
@@ -80,36 +87,58 @@ export default function GuiasPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {guides.map((guide) => (
-            <article
-              key={guide.slug}
-              className="card-hover rounded-2xl border border-[var(--border)] overflow-hidden group"
-              style={{ background: "var(--gradient-card)" }}
-            >
-              <div className="h-1 bg-[var(--accent-primary)]" />
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge variant={guide.categoryVariant}>{guide.category}</Badge>
-                  <div className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
-                    <Clock className="h-3 w-3" />
-                    {guide.readTime}
+          {guides.map((guide) => {
+            const content = (
+              <>
+                <div className="h-1 bg-[var(--accent-primary)]" />
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge variant={guide.categoryVariant}>{guide.category}</Badge>
+                    <div className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
+                      <Clock className="h-3 w-3" />
+                      {guide.readTime}
+                    </div>
                   </div>
+
+                  <h2 className="text-lg font-bold text-[var(--text-primary)] font-display mb-3 group-hover:text-[var(--accent-primary)] transition-colors">
+                    {guide.title}
+                  </h2>
+
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                    {guide.excerpt}
+                  </p>
+
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-primary)]">
+                    {guide.live ? "Leer más" : "Próximamente"}{" "}
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
                 </div>
+              </>
+            );
 
-                <h2 className="text-lg font-bold text-[var(--text-primary)] font-display mb-3 group-hover:text-[var(--accent-primary)] transition-colors">
-                  {guide.title}
-                </h2>
+            if (guide.live) {
+              return (
+                <Link
+                  key={guide.slug}
+                  href={`/guias/${guide.slug}`}
+                  className="card-hover rounded-2xl border border-[var(--border)] overflow-hidden group block"
+                  style={{ background: "var(--gradient-card)" }}
+                >
+                  {content}
+                </Link>
+              );
+            }
 
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                  {guide.excerpt}
-                </p>
-
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-primary)]">
-                  Próximamente <ArrowRight className="h-4 w-4" />
-                </span>
-              </div>
-            </article>
-          ))}
+            return (
+              <article
+                key={guide.slug}
+                className="rounded-2xl border border-[var(--border)] overflow-hidden opacity-70"
+                style={{ background: "var(--gradient-card)" }}
+              >
+                {content}
+              </article>
+            );
+          })}
         </div>
       </div>
     </div>
