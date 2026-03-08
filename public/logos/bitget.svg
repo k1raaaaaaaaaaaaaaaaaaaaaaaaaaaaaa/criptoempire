@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bitget-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DA2F2"/>
+      <stop offset="100%" stop-color="#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#1A1E2E"/>
+  <path d="M16 14L32 6l16 8v12L36 42v10l-4 2-4-2V42L16 26V14z" fill="url(#bitget-bg)"/>
+  <path d="M32 6L16 14v12l16-8V6z" fill="#1DA2F2" opacity="0.8"/>
+  <path d="M32 6l16 8v12l-16-8V6z" fill="#00D4AA" opacity="0.8"/>
+  <path d="M16 26l16 8 16-8v8L32 52 16 34v-8z" fill="url(#bitget-bg)" opacity="0.6"/>
+</svg>
