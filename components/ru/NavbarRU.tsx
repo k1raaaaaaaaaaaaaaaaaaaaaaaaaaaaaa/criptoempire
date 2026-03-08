@@ -3,19 +3,25 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Bitcoin } from "lucide-react";
+import { Menu, X, Bitcoin, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/#comparativa", label: "Comparar" },
-  { href: "/exchanges", label: "Exchanges" },
-  { href: "/guias", label: "Guías" },
-  { href: "/promociones", label: "Promociones" },
+  { href: "/ru", label: "Главная" },
+  { href: "/ru/birzhi", label: "Биржи" },
+  { href: "/ru/sravnit", label: "Сравнить" },
+  { href: "/ru/gajdy", label: "Гайды" },
 ];
 
-export default function Navbar() {
+const countryLinks = [
+  { href: "/ru/strany/rossiya", label: "Россия" },
+  { href: "/ru/strany/kazakhstan", label: "Казахстан" },
+  { href: "/ru/strany/belarus", label: "Беларусь" },
+];
+
+export default function NavbarRU() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [countryOpen, setCountryOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -25,8 +31,7 @@ export default function Navbar() {
   }, []);
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    if (href.startsWith("/#")) return pathname === "/";
+    if (href === "/ru") return pathname === "/ru";
     return pathname.startsWith(href);
   };
 
@@ -38,8 +43,7 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex h-full items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/ru" className="flex items-center gap-2 group">
             <div
               className={`flex items-center justify-center rounded-lg transition-all duration-300 ${
                 scrolled ? "h-7 w-7" : "h-8 w-8"
@@ -49,64 +53,83 @@ export default function Navbar() {
               <Bitcoin className={`text-white transition-all ${scrolled ? "h-4 w-4" : "h-5 w-5"}`} />
             </div>
             <span className={`font-bold text-[var(--text-primary)] font-display transition-all ${scrolled ? "text-lg" : "text-xl"}`}>
-              Cripto<span className="text-[var(--accent-primary)]">Empire</span>
+              Крипто<span className="text-[var(--accent-primary)]">Эмпайр</span>
             </span>
           </Link>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors relative ${
+                className={`text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-[var(--accent-primary)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 {link.label}
-                {link.href === "/guias" && (
-                  <span className="absolute -top-2 -right-8 text-[9px] font-bold bg-emerald-500 text-white px-1.5 py-0.5 rounded-full leading-none">
-                    NUEVO
-                  </span>
-                )}
               </Link>
             ))}
+
+            <div className="relative">
+              <button
+                onClick={() => setCountryOpen(!countryOpen)}
+                className={`text-sm font-medium transition-colors flex items-center gap-1 ${
+                  pathname.startsWith("/ru/strany")
+                    ? "text-[var(--accent-primary)]"
+                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                }`}
+              >
+                По странам
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${countryOpen ? "rotate-180" : ""}`} />
+              </button>
+              {countryOpen && (
+                <div className="absolute top-full mt-2 right-0 w-44 rounded-xl border border-[var(--border)] bg-[var(--bg-primary)] shadow-xl py-1">
+                  {countryLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)]"
+                      onClick={() => setCountryOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Desktop CTA + Lang */}
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-1 text-xs">
-              <span className="px-2 py-1 rounded text-[var(--accent-primary)] font-semibold">
-                ES
-              </span>
-              <span className="text-[var(--border)]">|</span>
-              <Link href="/ru" className="px-2 py-1 rounded text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
-                RU
+              <Link href="/" className="px-2 py-1 rounded text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+                🇪🇸 ES
               </Link>
+              <span className="text-[var(--border)]">|</span>
+              <span className="px-2 py-1 rounded text-[var(--accent-primary)] font-semibold">
+                🇷🇺 RU
+              </span>
             </div>
             <Link
-              href="/#comparativa"
+              href="/ru/birzhi"
               className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
               style={{ background: "var(--gradient-cta)" }}
             >
-              Ver Mejores Exchanges
+              Лучшие Биржи
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menú"
+            aria-label="Меню"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-primary)]/95 backdrop-blur-xl">
           <div className="px-4 py-4 space-y-1">
@@ -124,18 +147,31 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="border-b border-[var(--border)]/30 pb-2 mb-2">
+              <p className="px-3 py-1 text-xs text-[var(--text-muted)] uppercase tracking-wider">По странам</p>
+              {countryLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             <div className="flex items-center gap-2 px-3 py-2">
-              <span className="text-sm text-[var(--accent-primary)] font-semibold">Español</span>
+              <Link href="/" className="text-sm text-[var(--text-muted)]" onClick={() => setIsOpen(false)}>🇪🇸 Español</Link>
               <span className="text-[var(--border)]">|</span>
-              <Link href="/ru" className="text-sm text-[var(--text-muted)]" onClick={() => setIsOpen(false)}>Русский</Link>
+              <span className="text-sm text-[var(--accent-primary)] font-semibold">🇷🇺 Русский</span>
             </div>
             <Link
-              href="/#comparativa"
+              href="/ru/birzhi"
               className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white mt-4"
               style={{ background: "var(--gradient-cta)" }}
               onClick={() => setIsOpen(false)}
             >
-              Ver Mejores Exchanges
+              Лучшие Биржи
             </Link>
           </div>
         </div>

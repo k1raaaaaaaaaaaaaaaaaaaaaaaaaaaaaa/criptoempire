@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import LayoutShell from "@/components/layout/LayoutShell";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-display",
   display: "swap",
 });
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-body",
   display: "swap",
 });
@@ -51,9 +50,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} font-body antialiased`}
       >
         <GoogleAnalytics />
-        <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
-        <Footer />
+        <LayoutShell>{children}</LayoutShell>
 
         {/* JSON-LD Schema */}
         <script
