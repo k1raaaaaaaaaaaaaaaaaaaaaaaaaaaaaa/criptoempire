@@ -3,6 +3,7 @@ import { exchanges } from "@/data/exchanges";
 import { formatPercent } from "@/lib/utils";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
+import ExchangeLogo from "@/components/ui/ExchangeLogo";
 
 export const metadata: Metadata = {
   title:
@@ -112,11 +113,7 @@ export default function MexicoPage() {
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <img
-                          src={exchange.logo}
-                          alt={exchange.name}
-                          className="h-8 w-8 rounded-lg"
-                        />
+                        <ExchangeLogo exchangeId={exchange.id} size={28} />
                         <div>
                           <span className="font-semibold" style={{ color: "var(--text-primary)" }}>
                             {exchange.name}

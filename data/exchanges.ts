@@ -33,6 +33,7 @@ export interface Exchange {
 
   latam: {
     available: boolean;
+    countries?: string[];
     countriesBlocked: string[];
     localPayments: string[];
     languages: string[];
@@ -94,6 +95,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["P2P", "Transferencia bancaria", "Tarjeta de crédito"],
       languages: ["es", "pt", "en"],
@@ -160,6 +162,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["Tarjeta de crédito", "Transferencia bancaria"],
       languages: ["es", "en", "pt"],
@@ -225,6 +228,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba", "Venezuela (parcial)"],
       localPayments: ["P2P", "Transferencia bancaria", "Tarjeta", "PIX (Brasil)"],
       languages: ["es", "pt", "en"],
@@ -291,6 +295,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["P2P", "Tarjeta de crédito", "Transferencia"],
       languages: ["es", "en", "pt"],
@@ -357,6 +362,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["P2P", "Tarjeta de crédito"],
       languages: ["es", "en"],
@@ -422,6 +428,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["P2P", "Tarjeta de crédito"],
       languages: ["es", "en"],
@@ -487,6 +494,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba"],
       localPayments: ["Tarjeta de crédito", "Transferencia bancaria"],
       languages: ["es", "en"],
@@ -551,6 +559,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba", "Venezuela"],
       localPayments: ["Transferencia bancaria", "Tarjeta de crédito"],
       languages: ["es", "en"],
@@ -616,6 +625,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "CL"],
       countriesBlocked: ["Cuba", "Venezuela", "Bolivia"],
       localPayments: ["Tarjeta de crédito"],
       languages: ["es", "en"],
@@ -681,6 +691,7 @@ export const exchanges: Exchange[] = [
     },
     latam: {
       available: true,
+      countries: ["AR", "MX", "CO", "PE", "CL", "BR"],
       countriesBlocked: ["Cuba", "Bolivia"],
       localPayments: ["Tarjeta de crédito", "Transferencia"],
       languages: ["es", "en"],
