@@ -64,6 +64,33 @@ const guides = [
       "Как платить налоги с криптовалюты в России. Ставки 13% и 15%, подача 3-НДФЛ, расчёт дохода и штрафы за неуплату.",
     readTime: "8 мин",
   },
+  {
+    slug: "bingx-kopitreyding",
+    category: "Гайд" as const,
+    variant: "blue" as const,
+    title: "Копитрейдинг на BingX — полный гайд",
+    excerpt:
+      "Как копировать сделки лучших трейдеров на BingX. Настройка, выбор трейдеров, управление рисками и реальные результаты.",
+    readTime: "10 мин",
+  },
+  {
+    slug: "birzhi-bez-kyc",
+    category: "Рейтинг" as const,
+    variant: "green" as const,
+    title: "Биржи без KYC — рейтинг 2026",
+    excerpt:
+      "Топ криптобирж без обязательной верификации. Лимиты на вывод, безопасность и доступ из России.",
+    readTime: "7 мин",
+  },
+  {
+    slug: "nulevye-komissii-kriptobirzhi",
+    category: "Гайд" as const,
+    variant: "blue" as const,
+    title: "Нулевые комиссии на криптобиржах",
+    excerpt:
+      "Какие биржи предлагают 0% комиссии и как это работает. MEXC, BingX, Bybit — подробное сравнение условий.",
+    readTime: "8 мин",
+  },
 ];
 
 export default function GajdyPage() {
@@ -74,7 +101,7 @@ export default function GajdyPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <Badge variant="blue" className="mb-4">
-              6 гайдов
+              9 гайдов
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--text-primary)] font-display mb-4">
               Гайды по криптовалютам{" "}

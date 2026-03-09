@@ -35,7 +35,7 @@ export default function BirzhiPage() {
             Лучшие криптобиржи для России и СНГ
           </h1>
           <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Подробный рейтинг 6 проверенных бирж для русскоязычных трейдеров.
+            Подробный рейтинг 10 проверенных бирж для русскоязычных трейдеров.
             Комиссии, способы ввода рублей, VPN-статус и бонусы — всё в одном месте.
           </p>
         </div>
@@ -170,6 +170,8 @@ export default function BirzhiPage() {
               { name: "Bitget", tip: "Оплачивай BGB — скидка 20% на все комиссии", color: "text-cyan-400" },
               { name: "Gate.io", tip: "Держи GT — комиссия падает с 0.20% до 0.09%", color: "text-amber-400" },
               { name: "KuCoin", tip: "Оплачивай KCS — скидка 20–60%", color: "text-pink-400" },
+              { name: "CoinEx", tip: "Держи CET токен — скидка на спот и фьючерсы", color: "text-rose-400" },
+              { name: "BingX", tip: "VIP-программа снижает комиссии при росте объёма торгов", color: "text-indigo-400" },
             ].map((item) => (
               <div
                 key={item.name}

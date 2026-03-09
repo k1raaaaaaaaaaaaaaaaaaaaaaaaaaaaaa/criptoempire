@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Подробное сравнение криптобирж для России и СНГ",
 };
 
-const slugs = ["bybit", "mexc", "okx", "bitget", "gateio", "kucoin"] as const;
+const slugs = ["bybit", "mexc", "okx", "bitget", "gateio", "kucoin", "bingx", "weex", "ourbit", "coinex"] as const;
 
 const exchangeNames: Record<string, string> = {
   bybit: "Bybit",
@@ -18,6 +18,10 @@ const exchangeNames: Record<string, string> = {
   bitget: "Bitget",
   gateio: "Gate.io",
   kucoin: "KuCoin",
+  bingx: "BingX",
+  weex: "WEEX",
+  ourbit: "Ourbit",
+  coinex: "CoinEx",
 };
 
 function generatePairs() {
@@ -39,7 +43,7 @@ export default function SravnitPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Badge variant="blue" className="mb-4">
-              15 сравнений
+              45 сравнений
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--text-primary)] font-display mb-4">
               Сравнение криптобирж{" "}

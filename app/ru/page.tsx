@@ -64,15 +64,15 @@ export default function RUHomePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="text-2xl font-bold text-[var(--accent-primary)] font-display">6</p>
+              <p className="text-2xl font-bold text-[var(--accent-primary)] font-display">10</p>
               <p className="text-sm text-[var(--text-muted)]">Бирж проверено</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-emerald-400 font-display">4</p>
+              <p className="text-2xl font-bold text-emerald-400 font-display">3</p>
               <p className="text-sm text-[var(--text-muted)]">Страны СНГ</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-amber-400 font-display">15</p>
+              <p className="text-2xl font-bold text-amber-400 font-display">45</p>
               <p className="text-sm text-[var(--text-muted)]">Сравнений</p>
             </div>
             <div>
@@ -225,6 +225,9 @@ export default function RUHomePage() {
               { href: "/ru/gajdy/p2p-trading-rossiya", title: "P2P трейдинг в России", tag: "Гайд" },
               { href: "/ru/gajdy/nalog-na-kriptu-rossiya", title: "Налоги на криптовалюту", tag: "Закон" },
               { href: "/ru/gajdy/luchshie-birzhi-kazahstan", title: "Лучшие биржи Казахстана", tag: "Рейтинг" },
+              { href: "/ru/gajdy/bingx-kopitreyding", title: "Копитрейдинг на BingX", tag: "Гайд" },
+              { href: "/ru/gajdy/birzhi-bez-kyc", title: "Биржи без KYC", tag: "Рейтинг" },
+              { href: "/ru/gajdy/nulevye-komissii-kriptobirzhi", title: "Нулевые комиссии", tag: "Гайд" },
             ].map((g) => (
               <Link
                 key={g.href}

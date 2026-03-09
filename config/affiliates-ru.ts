@@ -5,6 +5,10 @@ export const AFFILIATE_LINKS_RU = {
   bitget: "https://www.bitgetapps.com/ru/referral/register?clacCode=DQLNT491",
   gateio: "https://www.gate.io/ref/YOURCODE",
   kucoin: "https://www.kucoin.com/r/YOURCODE",
+  bingx: "https://bingx.com/invite/YOURCODE",
+  weex: "https://www.weex.com/register?ref=YOURCODE",
+  ourbit: "https://www.ourbit.com/register?ref=YOURCODE",
+  coinex: "https://www.coinex.com/register?ref=YOURCODE",
 } as const;
 
 export type ExchangeIdRU = keyof typeof AFFILIATE_LINKS_RU;

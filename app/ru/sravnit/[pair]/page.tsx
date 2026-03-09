@@ -8,7 +8,7 @@ import VpnBadge from "@/components/ru/VpnBadge";
 import AffiliateButton from "@/components/ui/AffiliateButton";
 import Badge from "@/components/ui/Badge";
 
-const slugs = ["bitget", "bybit", "gateio", "kucoin", "mexc", "okx"];
+const slugs = ["bingx", "bitget", "bybit", "coinex", "gateio", "kucoin", "mexc", "okx", "ourbit", "weex"];
 
 const exchangeNames: Record<string, string> = {
   bybit: "Bybit",
@@ -17,6 +17,10 @@ const exchangeNames: Record<string, string> = {
   bitget: "Bitget",
   gateio: "Gate.io",
   kucoin: "KuCoin",
+  bingx: "BingX",
+  weex: "WEEX",
+  ourbit: "Ourbit",
+  coinex: "CoinEx",
 };
 
 function getAllPairs(): string[] {

@@ -24,6 +24,10 @@ export function generateStaticParams() {
     { slug: "bitget" },
     { slug: "gateio" },
     { slug: "kucoin" },
+    { slug: "bingx" },
+    { slug: "weex" },
+    { slug: "ourbit" },
+    { slug: "coinex" },
   ];
 }
 
