@@ -268,10 +268,66 @@ export default function ExchangeRUDetailPage({
                   <span className="font-medium text-[var(--text-primary)]">
                     {exchange.cis.kycRequired}
                   </span>
+                  {exchange.cis.kycNote && (
+                    <span className="text-emerald-400"> ({exchange.cis.kycNote})</span>
+                  )}
                   .
                 </p>
+                {exchange.cis.vpnNote && (
+                  <p className="text-xs text-[var(--text-muted)] italic mt-2">
+                    💡 {exchange.cis.vpnNote}
+                  </p>
+                )}
               </div>
             </div>
+
+            {/* TON Network Callout (MEXC + OKX) */}
+            {(exchange.id === "mexc" || exchange.id === "okx") && (
+              <div className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-5">
+                <p className="text-sm text-[var(--text-primary)] font-semibold mb-1">
+                  💎 Вывод через сеть TON
+                </p>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  Вывод через сеть TON практически бесплатный (~0 USDT) — идеально для небольших переводов.
+                </p>
+              </div>
+            )}
+
+            {/* No-KYC Callout (MEXC) */}
+            {exchange.id === "mexc" && (
+              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+                <p className="text-sm text-[var(--text-primary)] font-semibold mb-1">
+                  ✅ Без KYC — вывод до 10 BTC в сутки
+                </p>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  MEXC не требует верификации личности. Без KYC доступен вывод до 10 BTC в сутки — одно из лучших предложений для пользователей из СНГ.
+                </p>
+              </div>
+            )}
+
+            {/* Fee discount callout */}
+            {exchange.fees.discount && (
+              <div className="rounded-2xl border border-[var(--border)] bg-[var(--accent-primary)]/5 p-5">
+                <p className="text-sm text-[var(--text-primary)] font-semibold mb-1">
+                  💰 Скидка на комиссии
+                </p>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  {exchange.fees.discount}
+                </p>
+              </div>
+            )}
+
+            {/* Warning callout */}
+            {exchange.warning && (
+              <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5">
+                <p className="text-sm text-amber-400 font-semibold mb-1">
+                  ⚠️ {exchange.warning}
+                </p>
+                {exchange.note && (
+                  <p className="text-sm text-[var(--text-secondary)]">{exchange.note}</p>
+                )}
+              </div>
+            )}
 
             {/* Scores visualization */}
             <div

@@ -12,6 +12,8 @@ export interface ExchangeRU {
     futuresMaker: number;
     futuresTaker: number;
     withdrawal: string;
+    withdrawUSDT: string;
+    discount?: string;
   };
 
   bonus: {
@@ -32,10 +34,12 @@ export interface ExchangeRU {
   cis: {
     worksInRussia: "yes" | "partial" | "vpn" | "blocked";
     vpnRequired: boolean;
+    vpnNote?: string;
     rubMethods: string[];
     p2pAvailable: boolean;
     countries: string[];
     kycRequired: "Нет" | "Базовый" | "Полный";
+    kycNote?: string;
   };
 
   security: {
@@ -56,6 +60,8 @@ export interface ExchangeRU {
   pros: string[];
   cons: string[];
   description: string;
+  note?: string;
+  warning?: string;
   featured: boolean;
   badge?: "popular" | "lowest-fees" | "best-beginners" | "best-liquidity" | "no-kyc";
 }
@@ -73,7 +79,9 @@ export const exchangesRU: ExchangeRU[] = [
       spotTaker: 0.001,
       futuresMaker: 0.0002,
       futuresTaker: 0.00055,
-      withdrawal: "Зависит от сети",
+      withdrawal: "~1 USDT (TRC20)",
+      withdrawUSDT: "~1 USDT",
+      discount: "Скидка 25% при оплате токеном MNT",
     },
     bonus: {
       amount: "До $30,000 USDT",
@@ -91,9 +99,10 @@ export const exchangesRU: ExchangeRU[] = [
     cis: {
       worksInRussia: "partial",
       vpnRequired: false,
-      rubMethods: ["P2P", "SBP", "Tinkoff", "Сбербанк"],
+      vpnNote: "Работает без VPN, некоторые функции могут быть ограничены",
+      rubMethods: ["P2P", "СБП", "Т-Банк", "Сбербанк"],
       p2pAvailable: true,
-      countries: ["RU", "KZ", "BY", "UA"],
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Нет",
     },
     security: {
@@ -110,19 +119,20 @@ export const exchangesRU: ExchangeRU[] = [
       cisSupport: 9,
     },
     pros: [
+      "Лучший P2P с рублями в СНГ",
       "Работает в России без VPN",
-      "P2P с рублями через СБП и Тинькофф",
       "Бонус до $30,000 для новых пользователей",
       "Без KYC для базового трейдинга",
-      "Топ-3 по ликвидности фьючерсов",
+      "Скидка 25% на комиссии с токеном MNT",
     ],
     cons: [
-      "Ограничены некоторые функции для РФ",
+      "Некоторые функции ограничены для РФ",
       "Поддержка на русском может быть медленной",
       "Меньше альткоинов чем MEXC",
     ],
     description:
-      "Bybit — самая популярная биржа среди русскоязычных трейдеров. Работает в России без VPN, поддерживает P2P с рублями через СБП и банковские переводы. Щедрые бонусы для новых пользователей.",
+      "Bybit — самая популярная биржа среди русскоязычных трейдеров. Работает в России без VPN, поддерживает P2P с рублями через СБП, Т-Банк и Сбербанк. Щедрые бонусы для новых пользователей.",
+    note: "Лучший P2P с рублями в СНГ",
     featured: true,
     badge: "popular",
   },
@@ -137,8 +147,10 @@ export const exchangesRU: ExchangeRU[] = [
       spotMaker: 0,
       spotTaker: 0.0005,
       futuresMaker: 0,
-      futuresTaker: 0.0001,
-      withdrawal: "Зависит от сети",
+      futuresTaker: 0.0002,
+      withdrawal: "~1 USDT (TRC20), TON: ~0 USDT",
+      withdrawUSDT: "~1 USDT (TON: бесплатно)",
+      discount: "Скидка 50% на фьючерсы при хранении MX токена",
     },
     bonus: {
       amount: "До $1,000 USDT",
@@ -150,16 +162,17 @@ export const exchangesRU: ExchangeRU[] = [
       futures: true,
       margin: true,
       staking: true,
-      p2p: false,
+      p2p: true,
       nfts: false,
     },
     cis: {
       worksInRussia: "yes",
       vpnRequired: false,
-      rubMethods: ["Банковская карта", "Сторонние сервисы"],
-      p2pAvailable: false,
-      countries: ["RU", "KZ", "BY", "UA"],
+      rubMethods: ["P2P", "Банковская карта", "Сторонние сервисы"],
+      p2pAvailable: true,
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Нет",
+      kycNote: "Без KYC — вывод до 10 BTC в сутки",
     },
     security: {
       twoFactor: true,
@@ -175,18 +188,20 @@ export const exchangesRU: ExchangeRU[] = [
       cisSupport: 8,
     },
     pros: [
-      "Самые низкие комиссии на рынке (0% maker)",
-      "Без KYC",
+      "0% комиссия для мейкеров на споте и фьючерсах",
+      "Без KYC — вывод до 10 BTC/сутки",
       "Более 1,500 криптовалют",
+      "Вывод через TON практически бесплатный",
       "Новые токены листятся первыми",
     ],
     cons: [
-      "Нет встроенного P2P",
       "Меньше ликвидности чем у Bybit",
       "Интерфейс может путать начинающих",
+      "Резервы не полностью аудированы",
     ],
     description:
-      "MEXC — биржа с самыми низкими комиссиями: 0% для мейкеров на споте и фьючерсах. Работает в России без ограничений. Идеальна для тех, кто хочет экономить на комиссиях.",
+      "MEXC — биржа с самыми низкими комиссиями: 0% для мейкеров на споте и фьючерсах. Работает в России без ограничений. Без KYC с лимитом 10 BTC/сутки. Вывод через TON — почти бесплатно.",
+    note: "Лучшие комиссии для новичков и скальперов",
     featured: true,
     badge: "lowest-fees",
   },
@@ -202,7 +217,9 @@ export const exchangesRU: ExchangeRU[] = [
       spotTaker: 0.001,
       futuresMaker: 0.0002,
       futuresTaker: 0.0005,
-      withdrawal: "Зависит от сети",
+      withdrawal: "~1.5 USDT (TRC20), TON: ~0 USDT",
+      withdrawUSDT: "~1.5 USDT",
+      discount: "Скидка до 40% при хранении OKB токена",
     },
     bonus: {
       amount: "До $10,000 USDT",
@@ -218,11 +235,12 @@ export const exchangesRU: ExchangeRU[] = [
       nfts: true,
     },
     cis: {
-      worksInRussia: "vpn",
-      vpnRequired: true,
-      rubMethods: ["P2P"],
+      worksInRussia: "partial",
+      vpnRequired: false,
+      vpnNote: "P2P работает с Сбербанком и Т-Банком, VPN рекомендуется для стабильной работы",
+      rubMethods: ["P2P", "Сбербанк", "Т-Банк", "СБП"],
       p2pAvailable: true,
-      countries: ["KZ", "BY", "UA"],
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Базовый",
     },
     security: {
@@ -236,21 +254,23 @@ export const exchangesRU: ExchangeRU[] = [
       fees: 8,
       liquidity: 9,
       ux: 9,
-      cisSupport: 6,
+      cisSupport: 7,
     },
     pros: [
       "Отличный Web3-кошелёк",
-      "Высокие бонусы при регистрации",
-      "Современный интерфейс",
+      "P2P работает с Сбербанком и Т-Банком",
+      "Скидка до 40% с токеном OKB",
+      "Вывод через TON почти бесплатный",
       "Высокая ликвидность",
     ],
     cons: [
-      "Нужен VPN из России",
-      "Ограничения для российских пользователей",
-      "P2P в рублях ограничен",
+      "VPN рекомендуется для стабильной работы из РФ",
+      "Вывод USDT дороже (~1.5 USDT)",
+      "Базовый KYC обязателен",
     ],
     description:
-      "OKX — топовая биржа с Web3-кошельком и высокой ликвидностью. Для доступа из России требуется VPN. В Казахстане и других странах СНГ работает без ограничений.",
+      "OKX — топовая биржа с Web3-кошельком и высокой ликвидностью. P2P работает с российскими банками (Сбербанк, Т-Банк), но VPN рекомендуется для стабильной работы.",
+    note: "P2P работает с российскими банками, VPN рекомендуется",
     featured: true,
     badge: "best-liquidity",
   },
@@ -266,7 +286,9 @@ export const exchangesRU: ExchangeRU[] = [
       spotTaker: 0.001,
       futuresMaker: 0.0002,
       futuresTaker: 0.0006,
-      withdrawal: "Зависит от сети",
+      withdrawal: "~1 USDT (TRC20)",
+      withdrawUSDT: "~1 USDT",
+      discount: "Скидка 20% при оплате токеном BGB → 0.08%",
     },
     bonus: {
       amount: "До $6,200 USDT",
@@ -284,9 +306,9 @@ export const exchangesRU: ExchangeRU[] = [
     cis: {
       worksInRussia: "yes",
       vpnRequired: false,
-      rubMethods: ["P2P", "SBP", "Банковская карта"],
+      rubMethods: ["P2P", "Сбербанк", "Т-Банк", "СБП"],
       p2pAvailable: true,
-      countries: ["RU", "KZ", "BY", "UA"],
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Базовый",
     },
     security: {
@@ -305,8 +327,8 @@ export const exchangesRU: ExchangeRU[] = [
     pros: [
       "Лидер копитрейдинга",
       "Работает в России без VPN",
-      "P2P с рублями",
-      "Хорошие бонусы при регистрации",
+      "P2P через Сбербанк и Т-Банк",
+      "Скидка 20% на комиссии с токеном BGB",
     ],
     cons: [
       "Менее известен чем Bybit",
@@ -314,7 +336,8 @@ export const exchangesRU: ExchangeRU[] = [
       "Базовый KYC обязателен",
     ],
     description:
-      "Bitget — лидер копитрейдинга в мире криптовалют. Позволяет копировать стратегии успешных трейдеров. Работает в России, поддерживает P2P с рублями.",
+      "Bitget — лидер копитрейдинга в мире криптовалют. Позволяет копировать стратегии успешных трейдеров. Работает в России без VPN, удобный P2P через Сбербанк и Т-Банк.",
+    note: "Удобный P2P через Сбербанк и Т-Банк",
     featured: false,
     badge: undefined,
   },
@@ -326,11 +349,13 @@ export const exchangesRU: ExchangeRU[] = [
     founded: 2013,
     headquarters: "Каймановы острова",
     fees: {
-      spotMaker: 0.001,
-      spotTaker: 0.001,
+      spotMaker: 0.002,
+      spotTaker: 0.002,
       futuresMaker: 0.00015,
       futuresTaker: 0.0005,
       withdrawal: "Зависит от сети",
+      withdrawUSDT: "варьируется",
+      discount: "Комиссия снижается до 0.09% при хранении GT токена",
     },
     bonus: {
       amount: "До $5,500 USDT",
@@ -350,7 +375,7 @@ export const exchangesRU: ExchangeRU[] = [
       vpnRequired: false,
       rubMethods: ["P2P", "Банковская карта"],
       p2pAvailable: true,
-      countries: ["RU", "KZ", "BY", "UA"],
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Базовый",
     },
     security: {
@@ -361,7 +386,7 @@ export const exchangesRU: ExchangeRU[] = [
     },
     scores: {
       security: 8,
-      fees: 7,
+      fees: 5,
       liquidity: 7,
       ux: 7,
       cisSupport: 7,
@@ -373,12 +398,14 @@ export const exchangesRU: ExchangeRU[] = [
       "Launchpad для новых токенов",
     ],
     cons: [
+      "Базовая комиссия 0.20% — самая высокая среди 6 бирж",
       "Сложный интерфейс",
       "Поддержка на русском ограничена",
-      "P2P менее популярен чем на Bybit",
     ],
     description:
-      "Gate.io — одна из старейших бирж с огромным выбором криптовалют. Работает в России без VPN, поддерживает P2P. Идеальна для поиска новых токенов.",
+      "Gate.io — одна из старейших бирж с огромным выбором криптовалют. Работает в России без VPN. Базовая комиссия 0.20% снижается до 0.09% при хранении токена GT.",
+    warning: "Высокая базовая комиссия 0.20%",
+    note: "Базовая комиссия 0.20% — самая высокая. Снижается до 0.09% при хранении GT.",
     featured: false,
     badge: undefined,
   },
@@ -386,7 +413,7 @@ export const exchangesRU: ExchangeRU[] = [
     id: "kucoin",
     slug: "kucoin",
     name: "KuCoin",
-    rating: 4.4,
+    rating: 4.2,
     founded: 2017,
     headquarters: "Сейшельские острова",
     fees: {
@@ -394,7 +421,9 @@ export const exchangesRU: ExchangeRU[] = [
       spotTaker: 0.001,
       futuresMaker: 0.0002,
       futuresTaker: 0.0006,
-      withdrawal: "Зависит от сети",
+      withdrawal: "~1 USDT (TRC20)",
+      withdrawUSDT: "~1 USDT",
+      discount: "Скидка 20–60% при оплате токеном KCS",
     },
     bonus: {
       amount: "До $500 USDT",
@@ -414,8 +443,9 @@ export const exchangesRU: ExchangeRU[] = [
       vpnRequired: false,
       rubMethods: ["P2P"],
       p2pAvailable: true,
-      countries: ["RU", "KZ", "BY", "UA"],
+      countries: ["RU", "KZ", "BY"],
       kycRequired: "Нет",
+      kycNote: "Базовый лимит без KYC",
     },
     security: {
       twoFactor: true,
@@ -424,7 +454,7 @@ export const exchangesRU: ExchangeRU[] = [
       auditedReserves: false,
     },
     scores: {
-      security: 8,
+      security: 7,
       fees: 7,
       liquidity: 8,
       ux: 8,
@@ -434,15 +464,17 @@ export const exchangesRU: ExchangeRU[] = [
       "Большой выбор альткоинов",
       "Без KYC для базовых функций",
       "Встроенные торговые боты",
-      "Удобный интерфейс",
+      "Скидка до 60% с токеном KCS",
     ],
     cons: [
+      "В 2023 получил обвинения от властей США по AML",
       "Некоторые ограничения для РФ",
-      "Скромные бонусы",
       "P2P с рублями ограничен",
     ],
     description:
       "KuCoin — «Народная биржа» с широким выбором альткоинов и торговыми ботами. Не требует KYC для базовых функций. Частично работает из России.",
+    warning: "Проблемы с регулятором США",
+    note: "В 2023 получил обвинения от властей США по AML. Для СНГ доступна, но стоит учитывать.",
     featured: false,
     badge: "no-kyc",
   },

@@ -102,10 +102,10 @@ export default function RUHomePage() {
                   <th className="text-left px-4 py-3 text-[var(--text-muted)] font-medium">Биржа</th>
                   <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">Оценка</th>
                   <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">Спот</th>
+                  <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">Вывод USDT</th>
                   <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">Россия</th>
                   <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">P2P ₽</th>
                   <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">KYC</th>
-                  <th className="text-center px-4 py-3 text-[var(--text-muted)] font-medium">Бонус</th>
                   <th className="text-right px-4 py-3"></th>
                 </tr>
               </thead>
@@ -129,6 +129,11 @@ export default function RUHomePage() {
                               ТОП
                             </span>
                           )}
+                          {ex.warning && (
+                            <span className="ml-2 text-[9px] font-bold bg-amber-500/80 text-white px-1.5 py-0.5 rounded-full">
+                              ⚠
+                            </span>
+                          )}
                         </div>
                       </Link>
                     </td>
@@ -136,7 +141,14 @@ export default function RUHomePage() {
                       <span className="font-bold text-[var(--accent-primary)]">{ex.rating}</span>
                     </td>
                     <td className="text-center px-4 py-4 text-[var(--text-secondary)]">
-                      {(ex.fees.spotMaker * 100).toFixed(2)}%
+                      {ex.fees.spotMaker === 0 ? (
+                        <span className="text-emerald-400 font-bold">0%</span>
+                      ) : (
+                        `${(ex.fees.spotMaker * 100).toFixed(2)}%`
+                      )}
+                    </td>
+                    <td className="text-center px-4 py-4 text-[var(--text-secondary)] text-xs">
+                      {ex.fees.withdrawUSDT}
                     </td>
                     <td className="text-center px-4 py-4">
                       <VpnBadge status={ex.cis.worksInRussia} />
@@ -150,9 +162,6 @@ export default function RUHomePage() {
                     </td>
                     <td className="text-center px-4 py-4 text-[var(--text-secondary)]">
                       {ex.cis.kycRequired}
-                    </td>
-                    <td className="text-center px-4 py-4 text-emerald-400 font-semibold text-xs">
-                      {ex.bonus.amount}
                     </td>
                     <td className="text-right px-4 py-4">
                       <a

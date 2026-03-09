@@ -74,6 +74,9 @@ export default function BirzhiPage() {
                         {badge && (
                           <Badge variant={badge.variant}>{badge.label}</Badge>
                         )}
+                        {exchange.warning && (
+                          <Badge variant="amber">{exchange.warning}</Badge>
+                        )}
                       </div>
                       <div className="flex items-center gap-2 mt-1">
                         <div className="flex items-center gap-1">
@@ -153,6 +156,35 @@ export default function BirzhiPage() {
             );
           })}
         </div>
+
+        {/* Как сэкономить на комиссиях */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-extrabold text-[var(--text-primary)] font-display mb-6">
+            Как платить меньше комиссий в 2026
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { name: "MEXC", tip: "Нулевой мейкер на споте — лучший выбор для активной торговли", color: "text-emerald-400" },
+              { name: "Bybit", tip: "Оплачивай комиссии токеном MNT — скидка 25%", color: "text-blue-400" },
+              { name: "OKX", tip: "Держи OKB токен — скидка до 40%", color: "text-purple-400" },
+              { name: "Bitget", tip: "Оплачивай BGB — скидка 20% на все комиссии", color: "text-cyan-400" },
+              { name: "Gate.io", tip: "Держи GT — комиссия падает с 0.20% до 0.09%", color: "text-amber-400" },
+              { name: "KuCoin", tip: "Оплачивай KCS — скидка 20–60%", color: "text-pink-400" },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="rounded-xl border border-[var(--border)] p-4"
+                style={{ background: "var(--gradient-card)" }}
+              >
+                <p className={`font-bold ${item.color} mb-1`}>{item.name}</p>
+                <p className="text-sm text-[var(--text-secondary)]">{item.tip}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-[var(--text-muted)] mt-4">
+            * MEXC — самые низкие фьючерсные комиссии среди всех бирж (0% maker / 0.02% taker)
+          </p>
+        </section>
 
         {/* Bottom info text */}
         <div className="mt-12 text-center">
