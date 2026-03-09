@@ -83,7 +83,7 @@ export const exchanges: Exchange[] = [
       amount: "Hasta $30,000 USDT",
       type: "Registro + Depósito",
       promoCode: "CRIPTOCOMPARA",
-      affiliateUrl: "https://www.bybit.com/invite?ref=YOURCODE",
+      affiliateUrl: "https://www.bybit.com/invite?ref=W8Y7K8",
     },
     features: {
       spot: true,
@@ -150,7 +150,7 @@ export const exchanges: Exchange[] = [
       amount: "Hasta $1,000 USDT",
       type: "Registro + Trading",
       promoCode: "CRIPTOCOMPARA",
-      affiliateUrl: "https://www.mexc.com/register?inviteCode=YOURCODE",
+      affiliateUrl: "https://promote.mexc.com/r/0Xqq2VMnaX",
     },
     features: {
       spot: true,
@@ -216,7 +216,7 @@ export const exchanges: Exchange[] = [
       amount: "Hasta $600 USDT",
       type: "Registro + Depósito",
       promoCode: "CRIPTOCOMPARA",
-      affiliateUrl: "https://www.binance.com/en/register?ref=YOURCODE",
+      affiliateUrl: "https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=ru&ref=GRO_28502_6CBHL",
     },
     features: {
       spot: true,
@@ -283,7 +283,7 @@ export const exchanges: Exchange[] = [
       amount: "Hasta $10,000 USDT",
       type: "Registro + Depósito",
       promoCode: "CRIPTOCOMPARA",
-      affiliateUrl: "https://www.okx.com/join/YOURCODE",
+      affiliateUrl: "https://okx.com/join/80779425",
     },
     features: {
       spot: true,
@@ -416,7 +416,7 @@ export const exchanges: Exchange[] = [
       amount: "Hasta $6,200 USDT",
       type: "Registro + Depósito",
       promoCode: "CRIPTOCOMPARA",
-      affiliateUrl: "https://www.bitget.com/register?code=YOURCODE",
+      affiliateUrl: "https://www.bitgetapps.com/ru/referral/register?clacCode=DQLNT491",
     },
     features: {
       spot: true,
