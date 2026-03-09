@@ -20,6 +20,10 @@ const logos: Record<string, { bg: string; text: string; label: string; url: stri
   kraken: { bg: "#5741D9", text: "#fff", label: "KR", url: "https://assets.coingecko.com/markets/images/29/large/kraken.jpg" },
   coinbase: { bg: "#0052FF", text: "#fff", label: "CB", url: "https://assets.coingecko.com/markets/images/23/large/Group_1.png" },
   cryptocom: { bg: "#002D74", text: "#fff", label: "CDC", url: "https://assets.coingecko.com/markets/images/589/large/crypto_com.jpeg" },
+  bingx: { bg: "#1B6EF3", text: "#fff", label: "BX", url: "https://assets.coingecko.com/markets/images/543/large/2023-07-25_21h30_16.png" },
+  weex: { bg: "#FF6B35", text: "#fff", label: "WX", url: "https://assets.coingecko.com/markets/images/1062/large/weex.png" },
+  ourbit: { bg: "#7B2FBE", text: "#fff", label: "OB", url: "https://assets.coingecko.com/markets/images/1076/large/ourbit.png" },
+  coinex: { bg: "#00B374", text: "#fff", label: "CE", url: "https://assets.coingecko.com/markets/images/271/large/coinex-logo.png" },
 };
 
 export default function ExchangeLogo({
